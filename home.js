@@ -5,6 +5,6 @@
 const exploreButton = document.querySelector('.hero .button');
 if (exploreButton) {
     exploreButton.addEventListener('click', function() {
-        alert('Exploring the beauty of Anem Koyna!');
+        alert('Exploring the beauty of Koyna!');
     });
 }
