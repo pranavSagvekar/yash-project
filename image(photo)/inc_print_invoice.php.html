@@ -1,0 +1,809 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)https://maharashtrahsrp.com/inc_print_invoice.php -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="./inc_print_invoice.php_files/jquery-1.9.1.min.js.download"></script>
+        <script src="./inc_print_invoice.php_files/qr_code_js_lib_min.js.download"></script>
+        <!--        <script language="javascript" type="text/javascript">
+                $(document).ready(function () {
+                    $("#theform").submit();
+                });
+                function process() {
+                    var apiurl = "https://chart.googleapis.com/chart";
+                    var els = document.forms["theform"].elements;
+                    var el;
+                    var i = 0;
+    
+                    var querystring = "?";
+    
+                    while (null != (el = els.item(i++))) {
+                        querystring += escape(el.name) + "=" + escape(el.value) + "&";
+                    }
+    
+                    var resultado = document.getElementById('resultado');
+                    var basura = resultado.childNodes;
+                    var basurita;
+                    i = 0;
+    
+                    while (null != (basurita = basura.item(i++))) {
+                        resultado.removeChild(basurita);
+                    }
+    
+                    var img = document.createElement('img');
+                    img.src = apiurl + querystring;
+    
+                    resultado.appendChild(img);
+    
+                    return false;
+                }
+            </script>-->
+        
+            <style type="text/css">
+                .mainbodya {
+
+                    margin: 0.3cm 0;
+
+                    min-height: 29.7cm;
+
+                    page-break-after: auto;
+
+                    position: relative;
+
+                    width: 21cm;
+
+                }
+
+                .table {
+
+                    border-collapse: collapse;
+
+                    margin: 20px 0px;
+
+                    padding: 0;
+
+                    text-align: center;
+
+                    width: 100%;
+
+                    font-size: 11px;
+
+                }
+
+                .description {
+
+                    width: 300px;
+
+                }
+
+                .table .left {
+
+                    text-align: left;
+
+                }
+
+
+
+                .table .right {
+
+                    text-align: right;
+
+                }
+
+                .table tr td img {
+
+                    display: inline-block;
+
+                    height: 50px;
+
+                    margin: 0;
+
+                    padding: 0;
+
+                }
+
+                td {
+
+                    height: 15px;
+
+                    padding-left: 2px;
+
+                }
+
+                .table .center {
+
+                    text-align: center;
+
+                }
+
+                .item {
+
+                    width: 30%;
+
+                }
+
+                .uom {
+
+                    width: 7%;
+
+                }
+
+                .quantity {
+
+                    width: 15%;
+
+                }
+
+                .price {
+
+                    width: 15%;
+
+                }
+
+                .price {
+
+                    width: 15%;
+
+                }
+
+                .terms {
+
+                    font-weight: bold;
+
+                    padding: 0 10px;
+
+                    text-align: left;
+
+                }
+
+                .condititon {
+
+                    text-align: left;
+
+                }
+
+                .prepared {
+
+                    border-right: 1px solid #111;
+
+                }
+
+                .auth {
+
+                    border-right: 1px solid #111;
+
+                    display: inline-block;
+
+                    float: left;
+
+                    margin: 0;
+
+                    padding: 0;
+
+                    width: 33%;
+
+                }
+
+                .auth>small {
+
+                    display: inline-block;
+
+                    font-weight: bold;
+
+                    margin: 47px 6px 0 0;
+
+                    padding: 5px;
+
+                    width: 100%;
+
+                }
+
+                .signnatory {
+
+                    border-right: medium none;
+
+                }
+
+                .backround {
+
+                    background-color: #f3f3f3;
+
+                }
+
+                .with-50 {
+
+                    width: 50px;
+
+                }
+
+                .with-100 {
+
+                    width: 100px;
+
+                }
+
+                .top {
+
+                    vertical-align: top;
+
+                }
+
+                .bottom {
+
+                    vertical-align: bottom;
+
+                }
+
+                b {
+
+                    display: inline-block;
+
+                    width: 100%;
+
+                }
+
+                .name-des-auth>b {
+
+                    padding: 4px;
+
+                }
+
+                .hr-line {
+
+                    border: none;
+
+                    border-top: 1px dotted #f00;
+
+                    color: #fff;
+
+                    background-color: #fff;
+
+                    height: 3px;
+
+                    margin: 15px 0;
+
+                }
+
+                .letter_space_1 {
+
+                    font-size: 11px;
+
+                    letter-spacing: 0.1px;
+
+                }
+
+                .letter_space_2 {
+
+                    font-size: 10px;
+
+                    letter-spacing: 0.2px;
+
+                }
+
+                #resultado img {
+                    height: 80px;
+                    width: 118px;
+                    padding-left: 20%;
+                }
+            </style>
+
+            <script type="text/javascript">
+                //                window.print()
+            </script>
+
+    </head>
+
+    <body>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="" style="page-break-after:auto;">
+
+
+            <table border="1" class="table">
+
+                <tbody>
+
+                    <tr>
+
+                        <td rowspan="5" colspan="2"><img src="./inc_print_invoice.php_files/logo.png"></td>
+
+                        <td colspan="8" class="backround Customer_Invoice_Copy"><b class="letter_space_2">Customer Invoice Copy Fitment at dealer premises</b></td>
+
+
+                        <td colspan="4" rowspan="3" class="left top"><b class="letter_space_2">
+                                <center>Reprint</center>
+                            </b></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td rowspan="4" colspan="3"><b>FTA HSRP SOLUTIONS PVT. LTD.</b></td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                    </tr>
+
+                    <tr>
+
+
+
+                        <td class="left" colspan="4"><b class="letter_space_1">Invoice Number: MHOC2526185137</b></td>
+                        <td class="left" colspan="5"><b class="letter_space_1">Invoice Date: 13 May 2025</b></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="left" colspan="9"><b class="letter_space_1">Appointment Date : 26 May 2025 [ 10:30 AM-11:30 AM ]</b></td>
+                        <!-- <td class="left" colspan="5"><b class="letter_space_1">Make Name : MARUTI SUZUKI INDIA LTD</b></td> -->
+                    </tr>
+
+                    <tr class="backround">
+
+                        <td class="left" colspan="2"><b class="letter_space_2">GSTIN Number : 27AABCF8939R1ZP</b></td>
+
+                        <td class="left" colspan="5"><b class="letter_space_2">
+                                <center>Bill To </center>
+                            </b></td>
+
+                        <td class="left" colspan="7"><b class="letter_space_2">
+                                <center>Place of fitment</center>
+                            </b></td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td class="left" colspan="2">
+
+                            <b>FTA HSRP SOLUTIONS PVT. LTD.</b>
+
+                            <b>1st Floor, Office No 102, Shanti Niwas CHS, Mith Bunder Road, Chendani Koliwada, Kopari, Thane East, Thane, Maharashtra, 400603 400603<br> Mail Us : customer.care@maharashtrahsrp.com<br>
+                                Call Us :  +919305387662</b>
+<!--+918799576138,-->
+                        </td>
+
+                        <td class="left" colspan="5"><b class="letter_space_2">
+                                <b>Customer Name :SHIVANI SAGVEKAR</b><br>
+                                                                    <b>Customer Address :C 81   KOYANANAGAR TAL -PATAN  SATARA   MAHARASHTRA -415207 KOYNA DAM   KOYANANAGAR 415207</b>
+                                                                                        </b></td>
+
+                        <td class="left" colspan="7">
+                            <b class="letter_space_2">
+                                                                    <b>Dealer Name : HSRP FITMENT CENTER (SATARA)</b>
+                                    <b>Dealer Address : Shop No F-7 Guruprastha Resi Khed Road Near Pune Banglore Highway  Khed Satara 415001</b>
+                                    <!--<b>Contact No : </b>-->
+                                    <b>GSTIN No : NA</b>
+                                                                </b>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td class="left" colspan="2"><b class="letter_space_2">State/UT: Maharashtra</b></td>
+
+                        <td class="left" colspan="2"><b>Chassis No: MA3NFG81SHD124143</b></td>
+
+                        <td class="left" colspan="3"><b class="letter_space_1">Reg No: MH50L0378</b></td>
+
+                        <td class="left" colspan="5"><b class="letter_space_1">Mobile No: 9421213004</b></td>
+
+                        <td class="left" colspan="2"><b class="letter_space_1">App Type: OB</b></td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td class="left" colspan="2"><b class="letter_space_2">State/UT Code: 27</b></td>
+
+                        <td class="left" colspan="2"><b>Category of vehicle: <br>LMV</b></td>
+
+                        <td class="left" colspan="3"><b>Vehicle Class: PVT</b></td>
+
+                        <td class="left" colspan="5"><b>Transaction Number : BHD5E2I0KPX0E9</b></td>
+                        <td class="left" colspan="2"><b>Mode of Payment: Online</b></td>
+
+
+
+
+
+                    </tr>
+
+                    <tr class="backround">
+
+                        <td class="center" rowspan="2"><b>Sr. No.</b></td>
+
+                        <td class="center description" rowspan="2"><b>Description</b></td>
+
+                        <td class="center with-100" rowspan="2"><b>HSN/SAC Code</b></td>
+
+                        <td class="center with-100" rowspan="2" colspan="2"><b>Total Qty of goods (In Pair)</b></td>
+
+                        <td class="center with-100" rowspan="2"><b>Unit Price <br> (Rs.)</b></td>
+
+                        <td class="center with-100" rowspan="2"><b>Taxable Value <br> (Rs.)</b></td>
+                                                    <td class="center" colspan="3"><b>CGST</b></td>
+                            <td class="center" colspan="3"><b>SGST/UTGST</b></td>
+                        
+                        <td class="center with-100" rowspan="2"><b>Total <br> (Rs.)</b></td>
+
+                    </tr>
+
+                    <tr class="backround">
+                                                    <td class="center with-50"><b>Rate</b></td>
+                            <td class="center with-100" colspan="2"><b>Amount <br> (Rs.)</b></td>
+                            <td class="center with-50"><b>Rate</b></td>
+                            <td class="center with-100" colspan="2"><b>Amount <br> (Rs.)</b></td>
+                        
+                    </tr>
+
+                    <tr>
+
+                        <td colspan="14" class="left"><b>
+                                <h2>Supply of Following items.</h2>
+                            </b></td>
+
+                    </tr>
+
+
+
+
+                    <tr style="text-align:left;">
+
+                        <td>1</td>
+
+                                                    <td>
+                                <center>HSRP Cost (Complete Set)(Including Fitment Cost)</center>
+                            </td>
+
+
+                            
+                        <td>
+                            <center>831000</center>
+                        </td>
+
+                        <td>
+                            <center>1</center>
+                        </td>
+
+                        <td colspan="2">
+                            <center>745.00</center>
+                        </td>
+
+                        <td>
+                            <center>745.00</center>
+                        </td>
+                                                    <td>
+                                <center>9 %</center>
+                            </td>
+                            <td>
+                                <center>67.05</center>
+                            </td>
+                            <td colspan="2">
+                                <center>9 %</center>
+                            </td>
+                            <td colspan="2">
+                                <center>67.05</center>
+                            </td>
+                        
+
+                        <td>
+                            <center><b class="letter_space_1">879.10</b></center>
+                        </td>
+
+
+
+                    </tr>
+                                                            <tr style="text-align:left;">
+
+                        <td></td>
+
+                        <td>
+                            <center>Grand Total</center>
+                        </td>
+
+                        <td>
+                            <center></center>
+                        </td>
+
+                        <td>
+                            <center></center>
+                        </td>
+
+                        <td colspan="2">
+                            <center>745.00</center>
+                        </td>
+
+                        <td>
+                            <center>745.00</center>
+                        </td>
+
+                                                    <td>
+                                <center>9 %</center>
+                            </td>
+                            <td>
+                                <center>67.05</center>
+                            </td>
+                            <td colspan="2">
+                                <center>9 %</center>
+                            </td>
+                            <td colspan="2">
+                                <center>67.05</center>
+                            </td>
+                        
+
+                        <td>
+                            <center><b class="letter_space_1">
+                                    879.10                                </b></center>
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                        <td class="left top" colspan="4" rowspan=""><b class="letter_space_2">Total amount in words : </b></td>
+
+                        <td colspan="10" rowspan="1" class="left top"><b> Eight Hundred Seventy Nine  Rupees And Ten  Paise Only</b></td>
+
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="14" rowspan="1" class="center">
+                                                        <b>This is system generated invoice hence signature not required.</b>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+            <hr>
+
+
+        </div>
+
+        <div class="" style="page-break-after:auto;">
+
+
+            <table border="1" class="table">
+
+                <tbody>
+
+                    <tr>
+
+                        <td rowspan="5" colspan="2"><img src="./inc_print_invoice.php_files/logo.png"></td>
+
+                        <td colspan="8" class="backround Customer_Invoice_Copy"><b class="letter_space_2">To be handed over affixation agent</b></td>
+
+
+                        <td colspan="4" rowspan="3" class="left top"><b class="letter_space_2">
+                                <center>Reprint</center>
+                            </b></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td rowspan="4" colspan="3"><b>FTA HSRP SOLUTIONS PVT. LTD.</b></td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                    </tr>
+
+                    <tr>
+
+
+
+                        <td class="left" colspan="4"><b class="letter_space_1">Invoice Number: MHOC2526185137</b></td>
+                        <td class="left" colspan="5"><b class="letter_space_1">Invoice Date: 13 May 2025</b></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="left" colspan="9"><b class="letter_space_1">Appointment Date : 26 May 2025 [ 10:30 AM-11:30 AM ]</b></td>
+                        <!-- <td class="left" colspan="5"><b class="letter_space_1">Make Name : MARUTI SUZUKI INDIA LTD</b></td> -->
+                    </tr>
+
+                    <tr class="backround">
+
+                        <td class="left" colspan="2"><b class="letter_space_2">GSTIN Number : 27AABCF8939R1ZP</b></td>
+
+                        <td class="left" colspan="5"><b class="letter_space_2">
+                                <center>Bill To </center>
+                            </b></td>
+
+                        <td class="left" colspan="7"><b class="letter_space_2">
+                                <center>Place of fitment</center>
+                            </b></td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td class="left" colspan="2">
+
+                            <b>FTA HSRP SOLUTIONS PVT. LTD.</b>
+
+                            <b>1st Floor, Office No 102, Shanti Niwas CHS, Mith Bunder Road, Chendani Koliwada, Kopari, Thane East, Thane, Maharashtra, 400603 400603</b>
+
+                        </td>
+
+                        <td class="left" colspan="5"><b class="letter_space_2"><b>Customer Name :SHIVANI SAGVEKAR</b><br>
+                                <b>Customer Address :C 81   KOYANANAGAR TAL -PATAN  SATARA   MAHARASHTRA -415207 KOYNA DAM   KOYANANAGAR 415207</b>                                </b></td>
+
+                        <td class="left" colspan="7">
+                            <b class="letter_space_2">
+                                                                    <b>Dealer Name : HSRP FITMENT CENTER (SATARA)</b>
+                                    <b>Dealer Address : Shop No F-7 Guruprastha Resi Khed Road Near Pune Banglore Highway  Khed Satara 415001</b>
+                                    <b>Contact No : 9265641510</b>
+                                    <b>GSTIN No : NA</b>
+                                                            </b>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="left" colspan="2"><b class="letter_space_2">State/UT: Maharashtra</b></td>
+
+                        <td class="left" colspan="2"><b>Chasis No: MA3NFG81SHD124143</b></td>
+
+                        <td class="left" colspan="3"><b class="letter_space_1">Reg No: MH50L0378</b></td>
+
+                        <td class="left" colspan="5"><b class="letter_space_1">Mobile No: </b></td>
+
+                        <td class="left" colspan="2"><b class="letter_space_1">App Type: OB</b></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="left" colspan="2"><b class="letter_space_2">State/UT Code: 27</b></td>
+
+                        <td class="left" colspan="2"><b>Category of vehicle: <br>LMV</b></td>
+
+                        <td class="left" colspan="3"><b>Vehicle Class: PVT</b></td>
+
+                        <td class="left" colspan="7"><b>Mode of Payment: Online</b></td>
+
+
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" rowspan="1">
+
+                            
+
+                            <input type="hidden" id="qr_code_val" value="https://maps.app.goo.gl/hkvEcnb8RRYDcQr97">
+                            <!--                            <form action="#" onsubmit="return process();" method="POST" id="theform" name="theform">
+                                                                    <input type="hidden" name="chl" value="">
+                                                                        <input type="hidden" name="chld" id="chld" value="L" />
+                                                                        <input type="hidden" name="choe" value="UTF-8" id="choe"/>
+                                                                        <input type="hidden" name="chs" value="400x400" id="chs"/>
+                                                                        <input type="hidden" name="cht" value="qr" id="cht"/>
+                                                                </form>-->
+                            <div id="resultado" title="https://maps.app.goo.gl/hkvEcnb8RRYDcQr97"><canvas width="428" height="428" style="display: none;"></canvas><img src="data:image/png;base64,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" style="display: block;"></div>
+                        </td>
+                        <td colspan="12" rowspan="1">
+                            <p class="top right">I Hereby confirm that I have received a complete set of High Security Registration plate</p>
+                            <br><br>
+                            <br><br>
+                                                        <b class="bottom right">CUSTOMER SIGNATURE AND DATE</b>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+
+
+
+        </div>
+
+        <div>
+            <table border="1" class="table">
+                <thead>
+                    <tr>
+                        <th class="left" colspan="14">Instructions.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="14" class="left">
+                            1. Please ensure respective vehicle on which HSRP is to be affixed is available for affixation on the appointed date/ time. Under no circumstances, HSRPs will be hand delivered / handed over.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            2. Please present HSRP receipt copy, RC book to the dealer at time of affixation.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            <b>3. Invoice value includes HSRP (front/ rear/ as applicable), Snap Locks, Third License Plate (If applicable) and Fitment charge. No separated fitment charge is to be paid at fitment location. </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            4. HSRP is covered under warranty for 5 Years for natural wear and tear only, as per the Rule 50 of CMVR, 1989.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            5. HSRP will be destroyed if not affixed within 90 days of the first appointment date. No refunds will be issued.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            <b> 6. For any query/ grievance, please contact at (+91)8799576138 , (+91)9305387662 (Calling time 9.30 AM to 5.30 PM (Monday to Saturday) or write at customer.care@maharashtrahsrp.com</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            7. Receipt is valid till: 24 Aug 2025                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            8. You can reschedule your application appointments a maximum of three times.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="14" class="left">
+                            9.  Removal of old number plates specially if rusted, is not be the responsibility of dealer OR company. The Vehicle owner shall get the same removed�on�its�own.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            var qrcode = new QRCode("resultado", {
+                text: document.getElementById('qr_code_val').value,
+                width: 428,
+                height: 428,
+                //                colorDark: "#000000",
+                //                colorLight: "#ffffff",
+                //                correctLevel: QRCode.CorrectLevel.H
+            });
+        </script>
+
+
+
+
+    
+
+</body></html>
